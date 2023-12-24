@@ -10,7 +10,7 @@ const GoogleAuth = () => {
       const provider = new GoogleAuthProvider();
       const auth = getAuth(app);
       const result = await signInWithPopup(auth, provider);
-      const user = await axios.post("/api/v1/google", {
+      await axios.post("/api/v1/google", {
         userName: result.user.displayName,
         email: result.user.email,
         avatar: result.user.photoURL,

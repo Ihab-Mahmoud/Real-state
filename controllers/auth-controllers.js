@@ -41,7 +41,7 @@ export const LoginWithGoogle = async (req, res) => {
     user.password = undefined;
     res.status(StatusCodes.OK).json({ msg: "Logged In ", user });
   } else {
-    const newUser = req.body;
+    const newUser = {...req.body};
     newUser.userName =
       userName.split(" ").join("") + Math.random().toString(36).slice(2, 10);
     
