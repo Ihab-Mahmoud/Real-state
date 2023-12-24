@@ -28,9 +28,9 @@ const HomePage = () => {
  const isLoading = navigation.state === "loading";
 
   const images = [
-    "https://res.cloudinary.com/ddvpnidzz/image/upload/v1702284620/agn2v5fgkryd9mndhdbn.jpg",
-    "https://res.cloudinary.com/ddvpnidzz/image/upload/v1702284612/cclaxo8pvyo1ybers7yr.jpg",
-    "https://res.cloudinary.com/ddvpnidzz/image/upload/v1702284614/cxly22jpx173scyt8bpp.jpg",
+    "https://res.cloudinary.com/ddvpnidzz/image/upload/v1703442931/brian-babb-XbwHrt87mQ0-unsplash_ivgvw9.jpg",
+    "https://res.cloudinary.com/ddvpnidzz/image/upload/v1703442935/francesca-tosolini-XcVm8mn7NUM-unsplash_ixuo3c.jpg",
+    "https://res.cloudinary.com/ddvpnidzz/image/upload/v1703442930/etienne-beauregard-riverin-B0aCvAVSX8E-unsplash_ge0i3s.jpg",
   ];
   return (
     <div>
@@ -57,7 +57,7 @@ const HomePage = () => {
           return (
             <SwiperSlide key={image}>
               <div
-                className="h-[450px]"
+                className="h-[500px]"
                 style={{
                   background: `url(${image}) center no-repeat`,
                   backgroundSize: `cover`,

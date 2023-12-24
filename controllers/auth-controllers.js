@@ -32,7 +32,7 @@ export const login = async (req, res) => {
 };
 
 export const LoginWithGoogle = async (req, res) => {
-  const { email, userName } = req.body;
+  const { email, userName, avatar } = req.body;
 
   const user = await User.findOne({ email });
   if (user) {
@@ -41,10 +41,10 @@ export const LoginWithGoogle = async (req, res) => {
     user.password = undefined;
     res.status(StatusCodes.OK).json({ msg: "Logged In ", user });
   } else {
-    const newUser = {...req.body};
+    const newUser = { ...req.body };
     newUser.userName =
       userName.split(" ").join("") + Math.random().toString(36).slice(2, 10);
-    
+
     // generate password
     newUser.password =
       Math.random().toString(36).slice(2, 10) +
@@ -54,17 +54,14 @@ export const LoginWithGoogle = async (req, res) => {
     attachCookie({ res, token });
 
     user.password = undefined;
-    res
-      .status(StatusCodes.CREATED)
-      .json({ success: true, user });
+    res.status(StatusCodes.CREATED).json({ success: true, user });
   }
 };
 
-export const logout = async (req, res) =>
-{
+export const logout = async (req, res) => {
   res.cookie("token", "logout", {
     httpOnly: true,
     expires: new Date(Date.now()),
   });
   res.status(StatusCodes.OK).json({ success: true, msg: "user logged out!" });
-}
+};
