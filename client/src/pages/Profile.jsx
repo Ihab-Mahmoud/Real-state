@@ -52,7 +52,6 @@ const Profile = () => {
 
   const ActionData = useActionData();
 
-  console.log(img);
 
   useEffect(() => {
     if (ActionData?.response?.data?.msg) {

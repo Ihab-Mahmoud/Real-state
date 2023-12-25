@@ -140,8 +140,8 @@ const CreateListing = () => {
                   defaultValue={1}
                 />
                 <NumberInput
-                  name="paths"
-                  text="Paths"
+                  name="baths"
+                  text="baths"
                   sell={sell}
                   defaultValue={1}
                 />

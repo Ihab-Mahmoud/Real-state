@@ -185,8 +185,8 @@ const EditListing = () => {
                   defaultValue={listingData?.listing?.beds}
                 />
                 <NumberInput
-                  name="paths"
-                  text="Paths"
+                  name="baths"
+                  text="baths"
                   sell={sell}
                   defaultValue={listingData?.listing?.paths}
                 />

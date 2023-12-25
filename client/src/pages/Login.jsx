@@ -33,7 +33,6 @@ export const Loader = async () => {
     return redirect("/");
   } catch (error)
   {
-    console.log(error);
     return null;
   } 
 };
@@ -41,7 +40,7 @@ export const Loader = async () => {
 const Login = () => {
   const [error, setError] = useState(false);
   const navigation = useNavigation();
-  const data = useActionData();
+  const data = useActionData(); 
   const navigate = useNavigate();
 
   useEffect(() => {
