@@ -60,7 +60,7 @@ cloudinary.config({
 //     },
 //   })
 // );
-app.use(mongoSanitize()); 
+// app.use(mongoSanitize()); 
 
 
 // routes 
