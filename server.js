@@ -44,7 +44,22 @@ cloudinary.config({
 
 
 // security configuration
-app.use(helmet());
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrcElem: ["'self'", "'unsafe-inline'"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      connectSrc: ["www.googleapis.com"],
+      imgSrc: [
+        "'self'",
+        "*.unsplash.com",
+        "*.google.com",
+        "*.cloudinary.com",
+      ],
+    },
+  })
+);
 app.use(mongoSanitize()); 
 
 
